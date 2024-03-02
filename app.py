@@ -76,7 +76,7 @@ if selected == 'Diabetes Prediction':
         user_input = [Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin,
                       BMI, DiabetesPedigreeFunction, Age]
 
-        user_input = [float(x) for x in user_input]
+        user_input = [float(x) if x.strip() else 0.0 for x in user_input]
 
         diab_prediction = diabetes_model.predict([user_input])
 
@@ -143,7 +143,7 @@ if selected == 'Heart Disease Prediction':
 
         user_input = [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]
 
-        user_input = [float(x) for x in user_input]
+        user_input = [float(x) if x.strip() else 0.0 for x in user_input]
 
         heart_prediction = heart_disease_model.predict([user_input])
 
@@ -238,7 +238,7 @@ if selected == "Parkinsons Prediction":
                       RAP, PPQ, DDP,Shimmer, Shimmer_dB, APQ3, APQ5,
                       APQ, DDA, NHR, HNR, RPDE, DFA, spread1, spread2, D2, PPE]
 
-        user_input = [float(x) for x in user_input]
+        user_input = [float(x) if x.strip() else 0.0 for x in user_input]
 
         parkinsons_prediction = parkinsons_model.predict([user_input])
 
